@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8"  />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"  />
+    <title>Foil in Paris - L'Expérience eFoil Exclusive sur la Seine</title>
+    <meta name="description" content="Découvrez le premier club privé d'eFoil à Paris. Sessions d'initiation, coaching et location de matériel Lift Foils. Réservez votre vol sur l'eau dès aujourd'hui."  />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"  />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin  />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"  />
+
+    <!-- CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles & Tailwind Config -->
+    <style>
+        :root {
+            --font-sans: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Helper classes for animations */
+        .reveal-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .reveal-text > .reveal-text-inner {
+            display: inline-block;
+            transform: translateY(110%);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            300: '#CBD5E1',
+                            400: '#94A3B8',
+                            500: '#64748B',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1E293B',
+                            900: '#0F172A',
+                        },
+                        indigo: {
+                            400: '#818CF8',
+                            500: '#6366F1',
+                            600: '#4F46E5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<!-- Primary Meta Tags -->
+    <title>Foil in Paris - L'Expérience eFoil Exclusive sur la Seine</title>
+    <meta name="title" content="Foil in Paris - L'Expérience eFoil Exclusive sur la Seine">
+    <meta name="description" content="A professional website generated with Glow.">
+    
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Foil in Paris - L'Expérience eFoil Exclusive sur la Seine">
+    <meta property="og:description" content="A professional website generated with Glow.">
+    
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="Foil in Paris - L'Expérience eFoil Exclusive sur la Seine">
+    <meta property="twitter:description" content="A professional website generated with Glow.">
+    
+
+    <!-- Canonical -->
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Foil in Paris - L'Expérience eFoil Exclusive sur la Seine"
+}
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center bg-white/70 dark:bg-slate-800/70 backdrop-blur-lg rounded-full p-2 md:p-3 shadow-sm border border-slate-200/50 dark:border-slate-700/50">
+                <a href="#" class="text-xl font-bold tracking-widest text-slate-900 dark:text-white pl-4" data-lang-key="logo">FOIL IN PARIS</a>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        <svg id="theme-toggle-dark-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 10.607a1 1 0 011.414 0l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM2 11a1 1 0 100-2H1a1 1 0 100 2h1z"></path></svg>
+                    </button>
+                    <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+                    <button id="lang-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-semibold w-10">
+                        FR
+                    </button>
+                    <a href="#contact" class="hidden md:inline-block bg-indigo-600 text-white font-medium text-sm py-2.5 px-5 rounded-full hover:bg-indigo-700 transition-colors" data-lang-key="cta_reserve">
+                        Réserver
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Section 1: Hero -->
+        <section class="pt-32 pb-16 md:pt-48 md:pb-24 bg-slate-100 dark:bg-slate-800">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-slate-900 dark:text-white" data-lang-key="hero_title">
+                    Volez sur la Seine
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto" data-lang-key="hero_subtitle">
+                    L'expérience eFoil exclusive au cœur de Paris. Redécouvrez la capitale, en lévitation au-dessus de l'eau, avec le premier club de glisse urbain.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#offers" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-indigo-700 transition-transform hover:scale-105" data-lang-key="hero_cta_main">
+                        Voir les offres
+                    </a>
+                    <a href="#experience" class="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold py-3 px-8 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-transform hover:scale-105" data-lang-key="hero_cta_secondary">
+                        L'expérience
+                    </a>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 mt-16">
+                <div class="reveal-up aspect-video max-w-5xl mx-auto">
+                     <img src="https://efoil-paris.fr/wp-content/uploads/2025/08/Foilin_paris-352-scaled.jpg" 
+                         alt="Personne sur un eFoil naviguant sur la Seine à Paris"
+                         class="rounded-xl shadow-2xl w-full h-full object-cover"
+                         referrerPolicy="no-referrer"  />
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Introduction -->
+        <section class="py-24 md:py-32">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    <div class="lg:pr-12">
+                        <h2 class="reveal-text text-4xl md:text-5xl font-bold leading-tight text-slate-900 dark:text-white">
+                            <span class="reveal-text-inner" data-lang-key="intro_title_1">Le Premier Club de Glisse</span>
+                        </h2>
+                         <h2 class="reveal-text text-4xl md:text-5xl font-bold leading-tight text-indigo-600 dark:text-indigo-500 mb-8">
+                            <span class="reveal-text-inner" data-lang-key="intro_title_2">au Cœur de Paris.</span>
+                        </h2>
+                        <p class="reveal-up text-lg leading-relaxed text-slate-600 dark:text-slate-300" data-lang-key="intro_p1">
+                            Foil in Paris est bien plus qu'une base nautique. C'est un club privé, une communauté d'esthètes et de pionniers réunis par la passion de l'innovation et des sensations pures.
+                        </p>
+                        <p class="reveal-up mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300" data-lang-key="intro_p2">
+                            Entre lifestyle urbain et technologie de pointe, nous offrons une expérience inédite sur la Seine.
+                        </p>
+                    </div>
+                    <div class="reveal-up relative h-96 md:h-[500px] overflow-hidden rounded-xl">
+                        <img src="https://efoil-paris.fr/wp-content/uploads/2025/08/Foilin_paris-318-scaled.jpg" 
+                             alt="Ambiance du club Foil in Paris au bord de l'eau" 
+                             class="parallax-img absolute inset-0 w-full h-full object-cover"
+                             referrerPolicy="no-referrer"  />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Experience -->
+        <section class="py-24 md:py-32 bg-slate-100 dark:bg-slate-800">
+            <div class="container mx-auto px-6 lg:px-8 text-center">
+                <h2 class="reveal-text text-4xl md:text-5xl font-bold">
+                    <span class="reveal-text-inner" data-lang-key="experience_title">Une Aventure Urbaine Inégalée</span>
+                </h2>
+                <p class="reveal-up mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto" data-lang-key="experience_subtitle">
+                    Chaque session est conçue pour être mémorable, sécurisée et parfaitement adaptée à votre niveau.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <div class="reveal-up text-left p-8 rounded-xl bg-white dark:bg-slate-900 shadow-lg border border-transparent dark:border-slate-700">
+                        <h3 class="font-bold text-2xl text-indigo-600 dark:text-indigo-500 mb-4" data-lang-key="experience_card1_title">Coaching Privé</h3>
+                        <p class="text-slate-600 dark:text-slate-300" data-lang-key="experience_card1_desc">Nos instructeurs passionnés vous accompagnent, que vous soyez débutant ou rider confirmé, pour une progression rapide en toute sécurité.</p>
+                    </div>
+                    <div class="reveal-up text-left p-8 rounded-xl bg-white dark:bg-slate-900 shadow-lg border border-transparent dark:border-slate-700" style="--delay: 0.2s;">
+                        <h3 class="font-bold text-2xl text-indigo-600 dark:text-indigo-500 mb-4" data-lang-key="experience_card2_title">Technologie de Pointe</h3>
+                        <p class="text-slate-600 dark:text-slate-300" data-lang-key="experience_card2_desc">Accédez au meilleur matériel du marché avec la dernière génération d'eFoils de Lift Foils, renouvelée régulièrement pour une performance optimale.</p>
+                    </div>
+                    <div class="reveal-up text-left p-8 rounded-xl bg-white dark:bg-slate-900 shadow-lg border border-transparent dark:border-slate-700" style="--delay: 0.4s;">
+                        <h3 class="font-bold text-2xl text-indigo-600 dark:text-indigo-500 mb-4" data-lang-key="experience_card3_title">Club Exclusif</h3>
+                        <p class="text-slate-600 dark:text-slate-300" data-lang-key="experience_card3_desc">Rejoignez une communauté de passionnés. Partagez des sessions, testez du matériel, et connectez-vous lors de nos événements privés.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: Technology - The eFoils -->
+        <section class="py-24 md:py-32">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                     <h2 class="reveal-text text-4xl md:text-5xl font-bold leading-tight">
+                        <span class="reveal-text-inner" data-lang-key="tech_title">L'Excellence <span class="text-indigo-600 dark:text-indigo-500">Lift Foils</span></span>
+                    </h2>
+                    <p class="reveal-up text-lg text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto" data-lang-key="tech_subtitle">
+                        Inventeur de l'eFoil, Lift Foils repousse constamment les limites du design et de la performance. Découvrez les modèles qui redéfinissent le vol sur l'eau.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="reveal-up group">
+                        <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-xl text-center transition-all duration-300 h-full flex flex-col justify-between border border-slate-200 dark:border-slate-700">
+                            <img src="https://efoil-paris.fr/wp-content/uploads/2025/05/2025_LIFT5_49_CARBONBLACK_Package_Iso_Shadow_2000x2000-e1740402267678.png" 
+                                 alt="LIFT5 4'9 Sport" 
+                                 class="h-56 mx-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                                 referrerPolicy="no-referrer"  />
+                            <div>
+                                <h3 class="font-bold text-2xl mt-6 text-slate-800 dark:text-slate-100">LIFT5 4'9 Sport</h3>
+                                <p class="text-slate-500 dark:text-slate-400 mt-2" data-lang-key="tech_card1_desc">Maniabilité et réactivité pour un carving engagé.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal-up group" style="--delay: 0.2s;">
+                        <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-xl text-center transition-all duration-300 h-full flex flex-col justify-between border border-slate-200 dark:border-slate-700">
+                             <img src="https://efoil-paris.fr/wp-content/uploads/2025/05/2025_LIFT5_54_STEELBLUE_Package_Iso_Shadow_2000x2000-e1740402213338.png" 
+                                 alt="LIFT5 5'4 Cruiser" 
+                                 class="h-56 mx-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                                 referrerPolicy="no-referrer"  />
+                            <div>
+                                <h3 class="font-bold text-2xl mt-6 text-slate-800 dark:text-slate-100">LIFT5 5'4 Cruiser</h3>
+                                <p class="text-slate-500 dark:text-slate-400 mt-2" data-lang-key="tech_card2_desc">La stabilité parfaite pour découvrir le vol et progresser.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal-up group" style="--delay: 0.4s;">
+                        <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-xl text-center transition-all duration-300 h-full flex flex-col justify-between border border-slate-200 dark:border-slate-700">
+                             <img src="https://efoil-paris.fr/wp-content/uploads/2025/05/2025_LIFTX_43_DAWNPATROL_Package_TiltFront_2000x2000-e1743530237364.png" 
+                                 alt="LIFTX" 
+                                 class="h-56 mx-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                                 referrerPolicy="no-referrer"  />
+                            <div>
+                                <h3 class="font-bold text-2xl mt-6 text-slate-800 dark:text-slate-100">LIFT X</h3>
+                                <p class="text-slate-500 dark:text-slate-400 mt-2" data-lang-key="tech_card3_desc">L'hybride ultime. La légèreté du surf foil, la puissance de l'électrique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Packages -->
+        <section id="offers" class="py-24 md:py-32 bg-slate-100 dark:bg-slate-800">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                     <h2 class="reveal-text text-4xl md:text-5xl font-bold">
+                        <span class="reveal-text-inner" data-lang-key="offers_title">Choisissez Votre Expérience</span>
+                    </h2>
+                    <p class="reveal-up mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto" data-lang-key="offers_subtitle">
+                        Des formules adaptées à tous, de la première vague à la maîtrise complète.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="reveal-up bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://efoil-paris.fr/wp-content/uploads/2025/08/Capture-decran-2025-08-01-173627.png" alt="Pack Session Découverte" class="w-full h-48 object-cover" referrerPolicy="no-referrer"  />
+                        <div class="p-8 flex-grow flex flex-col">
+                            <h3 class="font-bold text-2xl" data-lang-key="offer1_title">Session Découverte</h3>
+                            <p class="text-slate-600 dark:text-slate-300 my-4 flex-grow" data-lang-key="offer1_desc">L'initiation parfaite pour ressentir les sensations uniques du vol sur l'eau.</p>
+                            <a href="#contact" class="font-semibold mt-auto text-center w-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3 px-6 rounded-full border border-slate-300 dark:border-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700" data-lang-key="offer1_cta">
+                                Découvrir
+                            </a>
+                        </div>
+                    </div>
+                    <div class="reveal-up bg-white dark:bg-slate-900 border-2 border-indigo-500 rounded-xl overflow-hidden flex flex-col scale-105 shadow-2xl shadow-indigo-500/20" style="--delay: 0.2s;">
+                        <div class="p-8 flex-grow flex flex-col">
+                            <div class="absolute top-4 right-4 bg-indigo-100 text-indigo-600 text-xs font-bold px-3 py-1 rounded-full" data-lang-key="offer2_badge">POPULAIRE</div>
+                            <h3 class="font-bold text-2xl" data-lang-key="offer2_title">Pack Progression</h3>
+                            <p class="text-slate-600 dark:text-slate-300 my-4 flex-grow" data-lang-key="offer2_desc">Idéal pour perfectionner votre technique et gagner en autonomie. (3 sessions)</p>
+                             <a href="#contact" class="font-semibold mt-auto text-center w-full bg-indigo-600 text-white py-3 px-6 rounded-full hover:bg-indigo-700" data-lang-key="offer2_cta">
+                                S'engager
+                            </a>
+                        </div>
+                    </div>
+                    <div class="reveal-up bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-2xl" style="--delay: 0.4s;">
+                        <img src="https://efoil-paris.fr/wp-content/uploads/2025/08/Capture-decran-2025-08-01-173839.png" alt="Pack Rider" class="w-full h-48 object-cover" referrerPolicy="no-referrer"  />
+                        <div class="p-8 flex-grow flex flex-col">
+                            <h3 class="font-bold text-2xl" data-lang-key="offer3_title">Pack Rider</h3>
+                            <p class="text-slate-600 dark:text-slate-300 my-4 flex-grow" data-lang-key="offer3_desc">Adoptez l'eFoil comme votre sport et profitez de tarifs avantageux. (5 sessions)</p>
+                             <a href="#contact" class="font-semibold mt-auto text-center w-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3 px-6 rounded-full border border-slate-300 dark:border-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700" data-lang-key="offer3_cta">
+                                Devenir Rider
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: CTA / Contact -->
+        <section id="contact" class="py-24 md:py-32">
+            <div class="container mx-auto px-6 lg:px-8 text-center">
+                <h2 class="reveal-text text-5xl md:text-6xl font-bold leading-tight">
+                    <span class="reveal-text-inner" data-lang-key="contact_title">Prêt à Voler ?</span>
+                </h2>
+                <p class="reveal-up text-lg text-slate-600 dark:text-slate-300 my-8 max-w-xl mx-auto" data-lang-key="contact_subtitle">
+                    Contactez-nous pour réserver votre session privée, discuter d'un membership ou organiser un événement corporate inoubliable.
+                </p>
+                <div class="reveal-up">
+                    <a href="mailto:contact@foilinparis.fr" class="inline-block bg-indigo-600 text-white font-bold text-lg py-4 px-12 rounded-full transition-transform duration-300 hover:scale-105">
+                        <span data-lang-key="contact_cta">Nous Contacter</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-slate-100 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+        <div class="container mx-auto px-6 lg:px-8 text-center text-slate-500 dark:text-slate-400">
+            <p class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-2">FOIL IN PARIS</p>
+            <p>1 Allée du bord de l’eau 75016 PARIS</p>
+            <div class="flex justify-center gap-4 my-4">
+                <a href="mailto:contact@foilinparis.fr" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">contact@foilinparis.fr</a>
+                <span>&bull;</span>
+                <a href="tel:+33767103793" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">07 67 10 37 93</a>
+            </div>
+            <p class="text-sm mt-8" data-lang-key="footer_copyright">&copy; 2024 Foil in Paris. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+        lucide.createIcons();
+
+        // --- Translations Data ---
+        const translations = {
+            fr: {
+                logo: "FOIL IN PARIS",
+                cta_reserve: "Réserver",
+                hero_title: "Volez sur la Seine",
+                hero_subtitle: "L'expérience eFoil exclusive au cœur de Paris. Redécouvrez la capitale, en lévitation au-dessus de l'eau, avec le premier club de glisse urbain.",
+                hero_cta_main: "Voir les offres",
+                hero_cta_secondary: "L'expérience",
+                intro_title_1: "Le Premier Club de Glisse",
+                intro_title_2: "au Cœur de Paris.",
+                intro_p1: "Foil in Paris est bien plus qu'une base nautique. C'est un club privé, une communauté d'esthètes et de pionniers réunis par la passion de l'innovation et des sensations pures.",
+                intro_p2: "Entre lifestyle urbain et technologie de pointe, nous offrons une expérience inédite sur la Seine.",
+                experience_title: "Une Aventure Urbaine Inégalée",
+                experience_subtitle: "Chaque session est conçue pour être mémorable, sécurisée et parfaitement adaptée à votre niveau.",
+                experience_card1_title: "Coaching Privé",
+                experience_card1_desc: "Nos instructeurs passionnés vous accompagnent, que vous soyez débutant ou rider confirmé, pour une progression rapide en toute sécurité.",
+                experience_card2_title: "Technologie de Pointe",
+                experience_card2_desc: "Accédez au meilleur matériel du marché avec la dernière génération d'eFoils de Lift Foils, renouvelée régulièrement pour une performance optimale.",
+                experience_card3_title: "Club Exclusif",
+                experience_card3_desc: "Rejoignez une communauté de passionnés. Partagez des sessions, testez du matériel, et connectez-vous lors de nos événements privés.",
+                tech_title: "L'Excellence Lift Foils",
+                tech_subtitle: "Inventeur de l'eFoil, Lift Foils repousse constamment les limites du design et de la performance. Découvrez les modèles qui redéfinissent le vol sur l'eau.",
+                tech_card1_desc: "Maniabilité et réactivité pour un carving engagé.",
+                tech_card2_desc: "La stabilité parfaite pour découvrir le vol et progresser.",
+                tech_card3_desc: "L'hybride ultime. La légèreté du surf foil, la puissance de l'électrique.",
+                offers_title: "Choisissez Votre Expérience",
+                offers_subtitle: "Des formules adaptées à tous, de la première vague à la maîtrise complète.",
+                offer1_title: "Session Découverte",
+                offer1_desc: "L'initiation parfaite pour ressentir les sensations uniques du vol sur l'eau.",
+                offer1_cta: "Découvrir",
+                offer2_badge: "POPULAIRE",
+                offer2_title: "Pack Progression",
+                offer2_desc: "Idéal pour perfectionner votre technique et gagner en autonomie. (3 sessions)",
+                offer2_cta: "S'engager",
+                offer3_title: "Pack Rider",
+                offer3_desc: "Adoptez l'eFoil comme votre sport et profitez de tarifs avantageux. (5 sessions)",
+                offer3_cta: "Devenir Rider",
+                contact_title: "Prêt à Voler ?",
+                contact_subtitle: "Contactez-nous pour réserver votre session privée, discuter d'un membership ou organiser un événement corporate inoubliable.",
+                contact_cta: "Nous Contacter",
+                footer_copyright: "© 2024 Foil in Paris. Tous droits réservés."
+            },
+            en: {
+                logo: "FOIL IN PARIS",
+                cta_reserve: "Book now",
+                hero_title: "Fly on the Seine",
+                hero_subtitle: "The exclusive eFoil experience in the heart of Paris. Rediscover the capital, levitating above the water, with the first urban water sports club.",
+                hero_cta_main: "View offers",
+                hero_cta_secondary: "The experience",
+                intro_title_1: "The Premier Water Sports Club",
+                intro_title_2: "in the Heart of Paris.",
+                intro_p1: "Foil in Paris is much more than a nautical base. It's a private club, a community of aesthetes and pioneers united by a passion for innovation and pure sensations.",
+                intro_p2: "Between urban lifestyle and cutting-edge technology, we offer a unique experience on the Seine.",
+                experience_title: "An Unparalleled Urban Adventure",
+                experience_subtitle: "Each session is designed to be memorable, safe, and perfectly tailored to your level.",
+                experience_card1_title: "Private Coaching",
+                experience_card1_desc: "Our passionate instructors guide you, whether you're a beginner or an experienced rider, for rapid and safe progress.",
+                experience_card2_title: "Cutting-Edge Technology",
+                experience_card2_desc: "Access the best equipment on the market with the latest generation of eFoils from Lift Foils, regularly updated for optimal performance.",
+                experience_card3_title: "Exclusive Club",
+                experience_card3_desc: "Join a community of enthusiasts. Share sessions, test equipment, and connect at our private events.",
+                tech_title: "The Excellence of Lift Foils",
+                tech_subtitle: "As the inventor of the eFoil, Lift Foils constantly pushes the boundaries of design and performance. Discover the models that redefine flight over water.",
+                tech_card1_desc: "Maneuverability and responsiveness for engaged carving.",
+                tech_card2_desc: "The perfect stability to discover flight and progress.",
+                tech_card3_desc: "The ultimate hybrid. The lightness of a surf foil, the power of electric.",
+                offers_title: "Choose Your Experience",
+                offers_subtitle: "Packages tailored for everyone, from the first wave to complete mastery.",
+                offer1_title: "Discovery Session",
+                offer1_desc: "The perfect introduction to feel the unique sensations of flying over water.",
+                offer1_cta: "Discover",
+                offer2_badge: "POPULAR",
+                offer2_title: "Progression Pack",
+                offer2_desc: "Ideal for perfecting your technique and gaining autonomy. (3 sessions)",
+                offer2_cta: "Commit",
+                offer3_title: "Rider Pack",
+                offer3_desc: "Adopt the eFoil as your sport and enjoy preferential rates. (5 sessions)",
+                offer3_cta: "Become a Rider",
+                contact_title: "Ready to Fly?",
+                contact_subtitle: "Contact us to book your private session, discuss membership, or organize an unforgettable corporate event.",
+                contact_cta: "Contact Us",
+                footer_copyright: "© 2024 Foil in Paris. All rights reserved."
+            }
+        };
+
+        // --- Theme Toggle ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        
+        const applyTheme = (theme) => {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+            }
+        };
+
+        const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(currentTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+
+        // --- Language Toggle ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        let currentLang = 'fr';
+
+        const switchLanguage = (lang) => {
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.dataset.langKey;
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            langToggleBtn.textContent = lang.toUpperCase();
+            currentLang = lang;
+        };
+
+        langToggleBtn.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            switchLanguage(newLang);
+        });
+
+        // --- Header Scroll Effect ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+        
+        // --- GSAP Text Reveal Animations ---
+        const revealTextElements = gsap.utils.toArray('.reveal-text');
+        revealTextElements.forEach(el => {
+            const inner = el.querySelector('.reveal-text-inner');
+            gsap.fromTo(inner, 
+                { yPercent: 110 },
+                {
+                    yPercent: 0,
+                    duration: 1.2,
+                    ease: 'power4.out',
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+
+        const revealUpElements = gsap.utils.toArray('.reveal-up');
+        revealUpElements.forEach(el => {
+            gsap.fromTo(el,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    ease: 'power4.out',
+                    delay: parseFloat(el.style.getPropertyValue('--delay')) || 0,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+        
+        // --- GSAP Parallax Effect ---
+        const parallaxImages = gsap.utils.toArray('.parallax-img');
+        parallaxImages.forEach(img => {
+            gsap.to(img, {
+                yPercent: -15,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: img.closest('div'),
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+        });
+        
+        // --- GSAP Smooth Scroll for Anchor Links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: { y: target, offsetY: 80 },
+                        ease: 'power3.inOut'
+                    });
+                }
+            });
+        });
+    });
+    </script>
+
+<!-- Railguard -->
+<script>
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    if (href.startsWith('#') && href !== '#') return;
+    
+    e.preventDefault();
+    e.stopPropagation();
+    
+    let toast = document.getElementById('railguard-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'railguard-toast';
+      toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background-color: #111827; color: #ffffff; padding: 12px 24px; border-radius: 9999px; font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; z-index: 2147483647; opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; pointer-events: none; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 8px;';
+      toast.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Bientôt disponible</span>';
+      document.body.appendChild(toast);
+    }
+    // Trigger reflow
+    void toast.offsetWidth;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    clearTimeout(window.railguardTimeout);
+    window.railguardTimeout = setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(10px)';
+    }, 2500);
+  }, true);
+</script>
+
+
+      
+      <script>
+        window.ASSETS = {};
+      </script>
+    
+      <script>
+        // Fallback for any dynamic injection or missed replacements
+        function syncAssets() {
+          document.querySelectorAll('img').forEach(img => {
+            const src = img.getAttribute('src');
+            if (src && src.includes('${ASSETS')) {
+              for (const [name, data] of Object.entries(window.ASSETS || {})) {
+                if (src.includes(name)) {
+                  img.src = data;
+                  break;
+                }
+              }
+            }
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', syncAssets);
+        setInterval(syncAssets, 1000); // Poll for dynamic content
+        
+        document.addEventListener('click', function(e) {
+          const link = e.target.closest('a');
+          if (link) {
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript:')) {
+              return;
+            }
+            e.preventDefault();
+            if (href.startsWith('http')) {
+              window.open(href, '_blank');
+            }
+          }
+        });
+        document.addEventListener('submit', function(e) {
+          e.preventDefault();
+        });
+      </script>
+    </body>
+</html>
